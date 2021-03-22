@@ -19,6 +19,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 ## Credits
 https://www.w3schools.com/
+https://stackoverflow.com/
+https://www.freecodecamp.org/news/
+https://developer.mozilla.org/en-US/
 
 ## License
 MIT License

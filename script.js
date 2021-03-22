@@ -41,6 +41,9 @@ function generatePassword() {
     // pick a random char from passwordOptions and add it to the password variable 
     password = password + randomChar 
   }
+
+  
+
   console.log(password);
   return password;
 
