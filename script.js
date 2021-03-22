@@ -6,7 +6,7 @@ const lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
 const numbers = "0123456789".split("");
 const symbols = "~`!@#$%^&*()-_=+;:?<>".split("");
 var passlength;
-let passwordOptions = [uppercase, lowercase, numbers, symbols];
+let passwordOptions = [];
 
 
 function generatePassword() {
@@ -19,16 +19,16 @@ function generatePassword() {
     var passwordsymbols = confirm("Would you like a password with special characters", "!@#$%^&*()_+~=`");
     
     
-    if (passwordupper === null || passwordupper === "") {
+    if (passwordupper) {
       passwordOptions.push(uppercase);
 
-    }else if (passwordlower === null || passwordlower === "") {
+    } if (passwordlower) {
       passwordOptions.push(lowercase);
 
-    }else if (passwordnumbers === null || passwordnumbers === "") {
+    } if (passwordnumbers) {
       passwordOptions.push(numbers);
       
-    }else if (passwordsymbols === null || passwordsymbols === "") {
+    } if (passwordsymbols) {
       passwordOptions.push(symbols);
     }
     console.log(passwordOptions);
@@ -37,7 +37,7 @@ function generatePassword() {
   for(var i = 0; i < passwordlength; i++){
     // var that contains random char from passwordOptions 
     var randomChar = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
-    password = passwordlength + randomChar // b 
+    password = password + randomChar // b 
   }
   console.log(randomChar);
   return password;
