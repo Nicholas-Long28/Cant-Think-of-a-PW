@@ -5,7 +5,8 @@ const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
 const numbers = "0123456789".split("");
 const symbols = "~`!@#$%^&*()-_=+;:?<>".split("");
-let passwordOptions = [];
+var passlength;
+let passwordOptions = [uppercase, lowercase, numbers, symbols];
 
 
 function generatePassword() {
@@ -18,40 +19,32 @@ function generatePassword() {
     var passwordsymbols = confirm("Would you like a password with special characters", "!@#$%^&*()_+~=`");
     
     
-    if (passwordupper == true) {
-      passwordOptions.push(...uppercase);
-    if (passwordlower == true) 
-      passwordOptions.push(...lowercase);
-    if (passwordnumbers == true) 
-      passwordOptions.push(...numbers);
-    if (passwordsymbols == true) 
-      passwordOptions.push(...symbols);
-    }
-    
-  }
-  
-  for (var i = 0; i < uppercase.length; i++) {
-    console.log(passwordOptions[i]);
-    
-  }
-  for (var i = 0; i < lowercase.length; i++) {
-    console.log(passwordOptions[i]);
-    
-  }
-  for (var i = 0; i < numbers.length; i++) {
-    console.log(passwordOptions[i]);
-    
-  }
-  for (var i = 0; i < symbols.length; i++) {
-    console.log(passwordOptions[i]);
-    
-  }
-  return password;
-}
-      // var that contains random char from passwordOptions 
-      var randomChar = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+    if (passwordupper === null || passwordupper === "") {
+      passwordOptions.push(uppercase);
 
-      password = password + randomChar // b 
+    }else if (passwordlower === null || passwordlower === "") {
+      passwordOptions.push(lowercase);
+
+    }else if (passwordnumbers === null || passwordnumbers === "") {
+      passwordOptions.push(numbers);
+      
+    }else if (passwordsymbols === null || passwordsymbols === "") {
+      passwordOptions.push(symbols);
+    }
+    console.log(passwordOptions);
+    
+  }
+  for(var i = 0; i < passwordlength; i++){
+    // var that contains random char from passwordOptions 
+    var randomChar = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+    password = passwordlength + randomChar // b 
+  }
+  console.log(randomChar);
+  return password;
+
+  }
+
+
 
       // ab
 
