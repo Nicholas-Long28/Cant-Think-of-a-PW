@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Set constant variables to choose from for the pw//
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
 const numbers = "0123456789".split("");
@@ -8,17 +9,17 @@ const symbols = "~`!@#$%^&*()-_=+;:?<>".split("");
 var passlength;
 let passwordOptions = [];
 
-
+//Set Prompts and an input for password length//
 function generatePassword() {
   var password = ""; // a
   var passwordlength = prompt("How many characters in your password?")
   if (passwordlength > 8 && passwordlength < 128) {
-    var passwordupper = confirm("Would you like a password with uppercase letters", "PASSWORD");
-    var passwordlower = confirm("Would you like a password with lowercase letters", "password");
-    var passwordnumbers = confirm("Would you like a password with numbers", "0123456789");
-    var passwordsymbols = confirm("Would you like a password with special characters", "!@#$%^&*()_+~=`");
+    var passwordupper = confirm("Would you like a password with uppercase letters");
+    var passwordlower = confirm("Would you like a password with lowercase letters");
+    var passwordnumbers = confirm("Would you like a password with numbers");
+    var passwordsymbols = confirm("Would you like a password with special characters");
     
-    
+    //Booleans for pw output//
     if (passwordupper) {
       passwordOptions.push(uppercase);
 
@@ -31,15 +32,15 @@ function generatePassword() {
     } if (passwordsymbols) {
       passwordOptions.push(symbols);
     }
-    console.log(passwordOptions);
     
-  }
+    }
   for(var i = 0; i < passwordlength; i++){
     // var that contains random char from passwordOptions 
     var randomChar = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+    console.log(randomChar);
     password = password + randomChar // b 
   }
-  console.log(randomChar);
+  console.log(password);
   return password;
 
   }
