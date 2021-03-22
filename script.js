@@ -11,9 +11,9 @@ let passwordOptions = [];
 
 //Set Prompts and an input for password length//
 function generatePassword() {
-  var password = ""; // a
+  var password = ""; 
   var passwordlength = prompt("How many characters in your password?")
-  if (passwordlength > 8 && passwordlength < 128) {
+  if (passwordlength >= 8 && passwordlength <= 128) {
     var passwordupper = confirm("Would you like a password with uppercase letters");
     var passwordlower = confirm("Would you like a password with lowercase letters");
     var passwordnumbers = confirm("Would you like a password with numbers");
@@ -38,21 +38,13 @@ function generatePassword() {
     // var that contains random char from passwordOptions 
     var randomChar = passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
     console.log(randomChar);
-    password = password + randomChar // b 
+    // pick a random char from passwordOptions and add it to the password variable 
+    password = password + randomChar 
   }
   console.log(password);
   return password;
 
   }
-
-
-
-      // ab
-
-    // pick a random char from passwordOptions and add it to the password variable 
-
-  
-  //return password;
 
 
 // Write password to the #password input
